@@ -19,21 +19,28 @@ LONG_BREAK_MIN = 20
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100,pady=50, bg=YELLOW)
-#hi2
+
 
 title_label= Label(text="Timer",fg=GREEN, bg=YELLOW, font=(FONT_NAME, 35, "bold"))
-title_label.grid(column=0, row=0)
+title_label.grid(column=1, row=0)
 
 canvas = Canvas(width=220, height=224, bg=YELLOW, highlightthickness=0)
 tomato_png = PhotoImage(file="tomato.png")
 canvas.create_image(110, 112, image=tomato_png)
 canvas.create_text(110,130,text="00:00",fill="white",font=(FONT_NAME, 27,"bold"))
-canvas.grid()
+canvas.grid(column=1, row=1)
+
+start_button = Button(text="Start") 
+start_button.grid(column=0, row=2)
+
+reset_button = Button(text="Reset") 
+reset_button.grid(column=2, row=2)
 
 
 
 
-
+check_marks=Label(text="✔", fg=GREEN,bg=YELLOW)
+check_marks.grid(column=1, row=3)
 
 
 window.mainloop()
